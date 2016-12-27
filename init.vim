@@ -222,8 +222,8 @@ filetype plugin indent on    " required
 "-----------------------------------------------------------------------------------------
 " neovim python
 "-----------------------------------------------------------------------------------------
-let g:python_host_prog = '/Users/alex/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/alex/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 "-----------------------------------------------------------------------------------------
 
 
