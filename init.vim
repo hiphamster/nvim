@@ -17,7 +17,11 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
+
+"-----------------------------------------------------------------------------------------
+" git integration
 Plugin 'tpope/vim-fugitive'
+
 "-----------------------------------------------------------------------------------------
 " This plugin provides a start screen for Vim and Neovim
 " Plugin 'mhinz/vim-startify'
@@ -185,6 +189,18 @@ let g:pandoc#syntax#conceal#urls = 1
 Plugin 'elzr/vim-json'
 
 "-----------------------------------------------------------------------------------------
+" Autocomplete
+"-----------------------------------------------------------------------------------------
+Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+
+"-----------------------------------------------------------------------------------------
+" Java
+"-----------------------------------------------------------------------------------------
+Plugin 'artur-shaik/vim-javacomplete2'
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+
+"-----------------------------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -206,8 +222,8 @@ filetype plugin indent on    " required
 "-----------------------------------------------------------------------------------------
 " neovim python
 "-----------------------------------------------------------------------------------------
-let g:python_host_prog = '/Users/ayelluas/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/ayelluas/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '/Users/alex/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/alex/.pyenv/versions/neovim3/bin/python'
 "-----------------------------------------------------------------------------------------
 
 
