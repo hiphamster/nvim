@@ -193,6 +193,16 @@ Plugin 'elzr/vim-json'
 "-----------------------------------------------------------------------------------------
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
+Plugin 'zchee/deoplete-jedi'
+"Plugin 'davidhalter/jedi-vim'
+
+autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
+
+" To close preview window of deoplete automagically
+autocmd CompleteDone * pclose 
+
+let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
 "-----------------------------------------------------------------------------------------
 " Java
@@ -218,14 +228,6 @@ filetype plugin indent on    " required
 "-----------------------------------------------------------------------------------------
 " VUNDLE END
 "-----------------------------------------------------------------------------------------
-"
-"-----------------------------------------------------------------------------------------
-" neovim python
-"-----------------------------------------------------------------------------------------
-let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
-"-----------------------------------------------------------------------------------------
-
 
 " enable 256 colors
 set t_Co=256
