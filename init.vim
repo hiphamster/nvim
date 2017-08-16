@@ -54,6 +54,7 @@ Bundle 'jeetsukumaran/vim-buffergator'
 " This replaces :tabnew which I used to bind to this mapping
 nmap <leader>T :enew<cr>
 
+
 " Move to the next buffer
 nmap <leader>l :bnext<CR>
 
@@ -187,7 +188,9 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 let g:pandoc#syntax#conceal#urls = 1
 Plugin 'elzr/vim-json'
-
+"-----------------------------------------------------------------------------------------
+Plugin 'tweekmonster/braceless.vim'
+autocmd FileType python BracelessEnable +indent
 "-----------------------------------------------------------------------------------------
 " Autocomplete
 "-----------------------------------------------------------------------------------------
@@ -204,6 +207,7 @@ autocmd CompleteDone * pclose
 let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
+nmap <leader>= :1,$ !yapf<cr>
 
 
 "-----------------------------------------------------------------------------------------
