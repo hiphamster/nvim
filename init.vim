@@ -207,8 +207,14 @@ autocmd CompleteDone * pclose
 let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
-nmap <leader>= :1,$ !yapf<cr>
+"-----------------------------------------------------------------------------------------
+" Python 
+"-----------------------------------------------------------------------------------------
+" ale lint - https://github.com/w0rp/ale
+Plugin 'w0rp/ale'
 
+" format python with yapf
+autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 
 "-----------------------------------------------------------------------------------------
 " Java
@@ -334,26 +340,6 @@ map <C-p> "i:exe "silent !tmux split-window -l 10 'bash '"<CR>
 :set nowritebackup 
 :endif
 
-" syntastic
-let g:syntastic_enable_perl_checker = 0
-
-" enable flake8 (flake8 uses pep8)
-" let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_checkers = ['pylint']
-
-" python
-" E111 - not a multiple of four
-" W291 - trailing whitespace
-let g:syntastic_python_flake8_post_args='--ignore=W291'
-
-" disable lint checks for python-mode
-let g:pymode_lint_write = 1
-
-" enable automatic syntax checking for python
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['ruby','python'] }
-
 " vim events
 " autocmd  EventName  filename_pattern   :command
 " to get a list of all events do: 
@@ -369,4 +355,8 @@ autocmd FileType perl   :set shiftwidth=2
 " zC - fold all
 " zc - fold under cursor 
 " :help fold
+
+" shows all vim colors with names
+" /opt/local/share/nvim/runtime/syntax/colortest.vim
+hi Search cterm=NONE ctermfg=black ctermbg=lightgreen
 let perl_fold=1
