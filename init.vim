@@ -197,7 +197,10 @@ autocmd FileType python BracelessEnable +indent
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 Plugin 'zchee/deoplete-jedi'
-"Plugin 'davidhalter/jedi-vim'
+
+" provides 'go to definition', etc
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#completions_enabled = 0
 
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 
