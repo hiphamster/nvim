@@ -17,7 +17,10 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-
+"-----------------------------------------------------------------------------------------
+" better than nerdtree
+Plugin 'tpope/vim-vinegar'
+Plugin 'justinmk/vim-dirvish'
 "-----------------------------------------------------------------------------------------
 " git integration
 Plugin 'tpope/vim-fugitive'
@@ -193,6 +196,7 @@ Plugin 'elzr/vim-json'
 "-----------------------------------------------------------------------------------------
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_refresh_always = 1
 Plugin 'zchee/deoplete-jedi'
 "Plugin 'davidhalter/jedi-vim'
 
