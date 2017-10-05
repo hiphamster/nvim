@@ -57,6 +57,7 @@ Bundle 'jeetsukumaran/vim-buffergator'
 " This replaces :tabnew which I used to bind to this mapping
 nmap <leader>T :enew<cr>
 
+
 " Move to the next buffer
 nmap <leader>l :bnext<CR>
 
@@ -190,7 +191,9 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 let g:pandoc#syntax#conceal#urls = 1
 Plugin 'elzr/vim-json'
-
+"-----------------------------------------------------------------------------------------
+Plugin 'tweekmonster/braceless.vim'
+autocmd FileType python BracelessEnable +indent
 "-----------------------------------------------------------------------------------------
 " Autocomplete
 "-----------------------------------------------------------------------------------------
@@ -198,7 +201,10 @@ Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_refresh_always = 1
 Plugin 'zchee/deoplete-jedi'
-"Plugin 'davidhalter/jedi-vim'
+
+" provides 'go to definition', etc
+Plugin 'davidhalter/jedi-vim'
+let g:jedi#completions_enabled = 0
 
 autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 
@@ -216,7 +222,6 @@ Plugin 'w0rp/ale'
 
 " format python with yapf
 autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
-
 
 "-----------------------------------------------------------------------------------------
 " Java
