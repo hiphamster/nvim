@@ -212,8 +212,6 @@ Plugin 'zchee/deoplete-jedi'
 Plugin 'davidhalter/jedi-vim'
 let g:jedi#completions_enabled = 0
 
-autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
-
 " To close preview window of deoplete automagically
 autocmd CompleteDone * pclose 
 
@@ -227,8 +225,10 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 Plugin 'w0rp/ale'
 
 " format python with yapf
+" autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
-
+"-----------------------------------------------------------------------------------------
+" Plugin 'Glench/Vim-Jinja2-Syntax'
 "-----------------------------------------------------------------------------------------
 " Java
 "-----------------------------------------------------------------------------------------
@@ -268,7 +268,6 @@ set backspace=2		    " backspace can join lines
 set smarttab		      " <Tab> at start of line tabs <shiftwidth> chars
 set ruler		          " show cursor position
 
-" The following eats gcc and SGI cc/CC
 set writebackup		    " keep a backup copy during the edit session
 
 "set digraph		      " Enter ISO-8869-1 umlauts on US keyboards!
@@ -347,6 +346,9 @@ map <C-p> "i:exe "silent !tmux split-window -l 10 'bash '"<CR>
 
 " this is annoying 
 " autocmd! BufWritePost *.js JSHint
+
+" write with sudo trick
+command W w !sudo tee % > /dev/null
 
 :if $VIM_CRONTAB == "true"
 :set nobackup
