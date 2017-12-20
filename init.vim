@@ -219,14 +219,35 @@ let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
 "-----------------------------------------------------------------------------------------
+" Syntax checking
+"-----------------------------------------------------------------------------------------
+"Bundle 'vim-syntastic/syntastic'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 0
+"let g:syntastic_check_on_wq = 0
+"
+"let g:syntastic_python_checkers = ['pylint']
+"-----------------------------------------------------------------------------------------
 " Python 
 "-----------------------------------------------------------------------------------------
 " ale lint - https://github.com/w0rp/ale
 Plugin 'w0rp/ale'
+let g:ale_enabled = 1
 
 " format python with yapf
 " autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
+
+"-----------------------------------------------------------------------------------------
+" sort imports with isort 
+""-----------------------------------------------------------------------------------------
+Plugin 'fisadev/vim-isort'
+let g:vim_isort_map = '<C-i>'
 "-----------------------------------------------------------------------------------------
 " Plugin 'Glench/Vim-Jinja2-Syntax'
 "-----------------------------------------------------------------------------------------
