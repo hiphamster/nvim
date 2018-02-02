@@ -142,7 +142,7 @@ Plugin 'benmills/vimux'
 "-----------------------------------------------------------------------------------------
 "Snippets - chunks of pre-build code 
 "Track the engine.
-"Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
@@ -217,6 +217,7 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 "-----------------------------------------------------------------------------------------
 " ale lint - https://github.com/w0rp/ale
 Plugin 'w0rp/ale'
+let g:ale_python_mypy_options = '--ignore-missing-imports'
 
 " format python with yapf
 " autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
