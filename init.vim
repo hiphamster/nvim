@@ -298,7 +298,7 @@ set complete=.,w,b,u,t,i
 set expandtab
 set shiftwidth=2
 set tabstop=2
-
+set colorcolumn=80
 set nowrap
 
 "always show the status line
