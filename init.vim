@@ -237,7 +237,7 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 "-----------------------------------------------------------------------------------------
 " ale lint - https://github.com/w0rp/ale
 Plugin 'w0rp/ale'
-let g:ale_enabled = 1
+let g:ale_enabled = 0
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 
 " format python with yapf
