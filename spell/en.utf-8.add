@@ -69,7 +69,6 @@ ayelluas
 bashrc
 builtin
 bytearray
-c
 cassandra
 clojure
 cnf
@@ -81,20 +80,16 @@ ctags
 db
 deepcopy
 dl
-e
 etc
 execfile
 ffmpeg
 filetype
 flake8
 fs
-g
-gc
 genspider
 github
 grep
 highliting
-i
 idb
 innodb
 io
@@ -121,8 +116,6 @@ mysqld
 namedtuple
 neovim
 nopager
-of
-off
 os
 pandoc
 pep8
@@ -142,7 +135,6 @@ readline
 readlines
 reper
 rlcompleter
-s
 scan
 session
 sql
@@ -152,7 +144,6 @@ strace
 sudo
 super
 syntastic
-t
 tablename
 url
 url_for

@@ -1,6 +1,6 @@
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " VUNDLE START
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -10,33 +10,33 @@ call vundle#begin()
 
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " better than nerdtree
 Plugin 'tpope/vim-vinegar'
 Plugin 'justinmk/vim-dirvish'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " git integration
 Plugin 'tpope/vim-fugitive'
 
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " ctags tag browser
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Bundle 'majutsushi/tagbar'
 Bundle 'craigemery/vim-autotag'
 nmap <Leader>tt :TagbarToggle<CR>
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " This plugin provides a start screen for Vim and Neovim
 " Plugin 'mhinz/vim-startify'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Plugin 'L9'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -55,9 +55,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Bundle 'jeetsukumaran/vim-buffergator'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
@@ -77,38 +77,39 @@ map bd :bd<CR>
 
 " Show all open buffers and their status
 " nmap <leader>bl :ls<CR>
-map ls :BuffergatorOpen<CR>
+" not having leader here was slowing down 'l' key
+map <leader>ls :BuffergatorOpen<CR>
 
 " cd ~/.vim/bundle/command-t && make 
 " cd ~/.vim/bundle/command-t/ruby/command-t && make 
 Bundle 'wincent/command-t'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
 " Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Bundle 'Lokaltog/vim-easymotion'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Bundle 'tpope/vim-rails'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " sets 'path' in vim to match CLASSPATH for jvm langs
 " this plugin interferes with eclim and causes A LOT OF PAIN!!!!
 " Bundle 'tpope/vim-classpath'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " vim-scripts repos
 Bundle 'FuzzyFinder'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " git repos on your local machine (ie. when working on your own plugin)
 "Bundle 'file:///Users/gmarik/path/to/plugin'
 " 
 "Bundle 'breeze.vim'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " automatically update session
 Bundle 'tpope/vim-obsession'
 "
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " nerdtree
 Bundle 'scrooloose/nerdtree'
 nmap <leader>nt :NERDTreeToggle<CR>
@@ -117,9 +118,10 @@ nmap <leader>nt :NERDTreeToggle<CR>
 "let g:NERDTreeWinSize=25
 "nmap <leader>nt :NERDTreeTabsToggle<CR>
 "map nt <leader>nt
-" http://vimcasts.org/blog/2013/01/oil-and-vinegar-split-windows-and-project-drawer/
+" http://vimcasts.org/blog/2013/01/
+"   oil-and-vinegar-split-windows-and-project-drawer/
 let NERDTreeHijackNetrw=1
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
  "Clojure
 Bundle 'guns/vim-clojure-static'
 
@@ -137,15 +139,15 @@ Bundle 'tpope/vim-leiningen'
 " Bundle 'tpope/vim-surround'
 " Bundle 'kien/rainbow_parentheses.vim'
 " Bundle 'tpope/vim-slave'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Bundle 'tmux-plugins/vim-tmux'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Plugin 'ivalkeen/vim-simpledb'
 let g:simpledb_show_timing = 0
 "sql
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Plugin 'benmills/vimux'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 "Snippets - chunks of pre-build code 
 "Track the engine.
 " Plugin 'SirVer/ultisnips'
@@ -153,19 +155,20 @@ Plugin 'benmills/vimux'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" Trigger configuration. Do not use <tab> if you 
+" use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Visual marks
 " Plugin 'kshenoy/vim-signature'
 " causes problems with vim-nerdtree-tabs
 
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Vertical indentation for blocks
 " Plugin 'Yggdroot/indentLine'
 " nmap <leader>i :IndentLinesToggle<CR>
@@ -175,34 +178,34 @@ let g:UltiSnipsEditSplit="vertical"
 "let g:indentLine_color_term = 239
 "let g:indentLine_color_gui = '#09AA08'
 "let g:indentLine_char = '│'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " automatically close parentheses and brackets
 Plugin 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Provides insert mode compleation 
 Plugin 'ervandew/supertab'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " search from Vim via ack
 Plugin 'mileszs/ack.vim'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " search from Vim via ack
 Plugin 'wesQ3/vim-windowswap'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Plugin 'godlygeek/tabular'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 "Markup/markdown
 " Plugin 'plasticboy/vim-markdown'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 let g:pandoc#syntax#conceal#urls = 1
 Plugin 'elzr/vim-json'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Plugin 'tweekmonster/braceless.vim'
 autocmd FileType python BracelessEnable +indent
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Autocomplete
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_refresh_always = 1
@@ -218,9 +221,9 @@ autocmd CompleteDone * pclose
 let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Syntax checking
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 "Bundle 'vim-syntastic/syntastic'
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
@@ -232,9 +235,9 @@ let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 "let g:syntastic_check_on_wq = 0
 "
 "let g:syntastic_python_checkers = ['pylint']
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Python 
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " ale lint - https://github.com/w0rp/ale
 Plugin 'w0rp/ale'
 let g:ale_enabled = 0
@@ -244,20 +247,20 @@ let g:ale_python_mypy_options = '--ignore-missing-imports'
 " autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " sort imports with isort 
-""-----------------------------------------------------------------------------------------
+""-----------------------------------------------------------------------------
 Plugin 'fisadev/vim-isort'
 let g:vim_isort_map = '<C-i>'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Plugin 'Glench/Vim-Jinja2-Syntax'
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " Java
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 Plugin 'artur-shaik/vim-javacomplete2'
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -266,15 +269,17 @@ filetype plugin indent on    " required
 "
 " Brief help
 " :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginInstall - installs plugins; append `!` to update 
+"                  or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PluginClean  - confirms removal of unused plugins; 
+"                 append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 " VUNDLE END
-"-----------------------------------------------------------------------------------------
+"------------------------------------------------------------------------------
 
 " enable 256 colors
 set t_Co=256
@@ -325,7 +330,7 @@ setlocal spell spelllang=en_us
 
 "set spellfile=~/.spellfile.utf8.add
 
-set nospell         " disabling for now because it causes "STRANGE" highlighting 
+set nospell    " disabling for now because it causes "STRANGE" highlighting 
 
 " testing
 " zyw - puts word under the cursor into a named register, in this case 'z'
