@@ -82,7 +82,8 @@ map <leader>ls :BuffergatorOpen<CR>
 
 " cd ~/.vim/bundle/command-t && make 
 " cd ~/.vim/bundle/command-t/ruby/command-t && make 
-Bundle 'wincent/command-t'
+" Bundle 'wincent/command-t'
+Bundle 'wincent/loupe'
 "------------------------------------------------------------------------------
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
@@ -220,6 +221,7 @@ autocmd CompleteDone * pclose
 
 let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
+"let g:ruby_host_prog = '/opt/local/bin/ruby'
 
 "------------------------------------------------------------------------------
 " Syntax checking
