@@ -1,0 +1,6 @@
+# [ -n "$VIRTUAL_ENV" ] && source $VIRTUAL_ENV/bin/activate
+if [ -n "$VIRTUAL_ENV" ]; then 
+  # https://github.com/pyenv/pyenv-virtualenv/issues/278
+  export PATH=$VIRTUAL_ENV/bin:$PATH
+fi
+/opt/local/bin/nvim "$@"
