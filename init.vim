@@ -45,6 +45,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 "------------------------------------------------------------------------------
+" Open a sidebar that shows you every mark that you can access 
+" from your current buffer, as well as the contexts in which 
+" those marks appear.
+Plugin 'Yilin-Yang/vim-markbar'
+"------------------------------------------------------------------------------
 Bundle 'jeetsukumaran/vim-buffergator'
 
 " To open a new empty buffer
@@ -117,6 +122,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'godlygeek/tabular'
 "------------------------------------------------------------------------------
 "Markup/markdown
+Plugin 'vimwiki/vimwiki'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 let g:pandoc#syntax#conceal#urls = 1
@@ -163,6 +169,10 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 
+"------------------------------------------------------------------------------
+" tidy
+"------------------------------------------------------------------------------
+let g:ale_html_tidy_executable = '/opt/local/bin/tidy' 
 
 "------------------------------------------------------------------------------
 " Python 
