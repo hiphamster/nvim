@@ -1,34 +1,36 @@
-"------------------------------------------------------------------------------
-" VUNDLE START
-"------------------------------------------------------------------------------
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-"------------------------------------------------------------------------------
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-"------------------------------------------------------------------------------
-" better than nerdtree
-Plugin 'tpope/vim-vinegar'
+let g:python_host_prog  = '/Users/alex/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/alex/.pyenv/versions/neovim3/bin/python'
+
+" vim-plug plugin manager
+" START
+call plug#begin('~/.local/share/nvim/plugged')
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+nmap <leader>nt :NERDTreeToggle<CR>
+let NERDTreeHijackNetrw=1
+
+" Provides insert mode compleation 
+Plug 'ervandew/supertab'
+
 " Directory viewer for Vim
-Plugin 'justinmk/vim-dirvish'
-"------------------------------------------------------------------------------
+Plug 'justinmk/vim-dirvish'
+
 " git integration
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
+
 "------------------------------------------------------------------------------
 " ctags tag browser
 "------------------------------------------------------------------------------
-Bundle 'majutsushi/tagbar'
-Bundle 'craigemery/vim-autotag'
+Plug 'majutsushi/tagbar'
+Plug 'craigemery/vim-autotag'
 nmap <Leader>tt :TagbarToggle<CR>
+
 "------------------------------------------------------------------------------
-Plugin 'L9'
+" airline
 "------------------------------------------------------------------------------
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 let g:airline_theme='sol'
 
@@ -44,13 +46,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 " This allows buffers to be hidden if you've modified a buffer.
 " This is almost a must if you wish to use buffers in this way.
 set hidden
+
 "------------------------------------------------------------------------------
-" Open a sidebar that shows you every mark that you can access 
-" from your current buffer, as well as the contexts in which 
-" those marks appear.
-Plugin 'Yilin-Yang/vim-markbar'
+" vim-buffergator
 "------------------------------------------------------------------------------
-Bundle 'jeetsukumaran/vim-buffergator'
+Plug 'jeetsukumaran/vim-buffergator'
 
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
@@ -71,147 +71,75 @@ map bd :bd<CR>
 " nmap <leader>bl :ls<CR>
 " not having leader here was slowing down 'l' key
 map <leader>ls :BuffergatorOpen<CR>
-"------------------------------------------------------------------------------
+
 " Enhanced multi-file search
-Bundle 'wincent/loupe'
-"------------------------------------------------------------------------------
+Plug 'wincent/loupe'
+
 " Allows to find chars/words, and to move cursor quickly
-Bundle 'Lokaltog/vim-easymotion'
-"------------------------------------------------------------------------------
+Plug 'Lokaltog/vim-easymotion'
+
 " Helps write HTML faster
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-"------------------------------------------------------------------------------
-" vim-scripts repos
-Bundle 'FuzzyFinder'
-"------------------------------------------------------------------------------
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+
 " automatically update session
-Bundle 'tpope/vim-obsession'
-"------------------------------------------------------------------------------
-" nerdtree
-Bundle 'scrooloose/nerdtree'
-nmap <leader>nt :NERDTreeToggle<CR>
+Plug 'tpope/vim-obsession'
 
-"Bundle 'jistr/vim-nerdtree-tabs'
-"let g:NERDTreeWinSize=25
-"nmap <leader>nt :NERDTreeTabsToggle<CR>
-"map nt <leader>nt
-" http://vimcasts.org/blog/2013/01/
-"   oil-and-vinegar-split-windows-and-project-drawer/
-let NERDTreeHijackNetrw=1
-"------------------------------------------------------------------------------
-Bundle 'tmux-plugins/vim-tmux'
-"------------------------------------------------------------------------------
-Plugin 'ivalkeen/vim-simpledb'
-let g:simpledb_show_timing = 0
-"sql
-"------------------------------------------------------------------------------
 " provides sytax highlighting for timux file
-Plugin 'benmills/vimux'
-"------------------------------------------------------------------------------
+Plug 'benmills/vimux'
+
+Plug 'ivalkeen/vim-simpledb'
+let g:simpledb_show_timing = 0
+
 " automatically close parentheses and brackets
-Plugin 'Raimondi/delimitMate'
+Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
-"------------------------------------------------------------------------------
-" Provides insert mode compleation 
-Plugin 'ervandew/supertab'
-"------------------------------------------------------------------------------
+
 " search from Vim via ack
-Plugin 'mileszs/ack.vim'
-"------------------------------------------------------------------------------
+Plug 'mileszs/ack.vim'
+
 " Alignment 
-Plugin 'godlygeek/tabular'
-"------------------------------------------------------------------------------
+Plug 'godlygeek/tabular'
+
 "Markup/markdown
-Plugin 'vimwiki/vimwiki'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax' 
+Plug 'vimwiki/vimwiki'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax' 
 let g:pandoc#syntax#conceal#urls = 1
-"------------------------------------------------------------------------------
-Plugin 'elzr/vim-json'
-"------------------------------------------------------------------------------
+
+Plug 'elzr/vim-json'
+
 " Folding indented code blocks
-Plugin 'tweekmonster/braceless.vim'
+Plug 'tweekmonster/braceless.vim'
 autocmd FileType python BracelessEnable +indent
+
+"---------------------------------------------------------------------------------
+" deoplete code completion
 "------------------------------------------------------------------------------
-"XXX Autocomplete
-"------------------------------------------------------------------------------
-Plugin 'ncm2/ncm2'
-Plugin 'roxma/nvim-yarp'
-" Python completion
-Plugin 'ncm2/ncm2-jedi'
-" Words in buffer completion
-Plugin 'ncm2/ncm2-bufword'
-" Filepath completion
-Plugin 'ncm2/ncm2-path'
+Plug 'zchee/deoplete-jedi'
 
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+let g:deoplete#sources#jedi#show_docstring = 0
 
-" IMPORTANTE: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-set shortmess+=c
-inoremap <c-c> <ESC>
-" make it fast
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
-" Use new fuzzy based matches
-let g:ncm2#matcher = 'substrfuzzy'
+let g:deoplete#enable_at_startup = 1
 
-
-
-" Disable Jedi-vim autocompletion and enable call-signatures options
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
-
-"------------------------------------------------------------------------------
-" HTML
-"------------------------------------------------------------------------------
-let g:ale_html_tidy_executable = '/opt/local/bin/tidy'
-"------------------------------------------------------------------------------
-" Python 
-"------------------------------------------------------------------------------
-let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
-" ale lint - https://github.com/w0rp/ale
-Plugin 'w0rp/ale'
-let g:ale_enabled = 0
-let g:ale_python_mypy_options = '--ignore-missing-imports'
-
-" format python with yapf
-" autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
-autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
-Bundle 'lambdalisue/vim-pyenv'
-
-"------------------------------------------------------------------------------
 " sort imports with isort 
-""-----------------------------------------------------------------------------
-Plugin 'fisadev/vim-isort'
+Plug 'fisadev/vim-isort'
 let g:vim_isort_map = '<C-i>'
-"------------------------------------------------------------------------------
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-" To ignore plugin indent changes, instead use 'filetype plugin on'
-filetype plugin indent on    " required
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall - installs plugins; append `!` to update 
-"                  or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean  - confirms removal of unused plugins; 
-"                 append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"------------------------------------------------------------------------------
-" VUNDLE END
-"------------------------------------------------------------------------------
+
+" vim-plug plugin manager
+" END
+call plug#end()
+
+
+" python code formatter
+autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 
 " enable project-specific .vimrc files
 set exrc
