@@ -6,6 +6,10 @@ let g:python3_host_prog = '/Users/alex/.pyenv/versions/neovim3/bin/python'
 " START
 call plug#begin('~/.local/share/nvim/plugged')
 
+Plug 'edkolev/tmuxline.vim'
+let g:airline#extensions#tmuxline#enabled = 0
+let g:tmuxline_theme = 'lightline'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 nmap <leader>nt :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1
@@ -129,6 +133,9 @@ endif
 
 let g:deoplete#enable_at_startup = 1
 
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
 " sort imports with isort 
 Plug 'fisadev/vim-isort'
 let g:vim_isort_map = '<C-i>'
@@ -137,6 +144,8 @@ let g:vim_isort_map = '<C-i>'
 " END
 call plug#end()
 
+" true color support
+" set termguicolors
 
 " python code formatter
 autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
@@ -177,7 +186,7 @@ set shiftwidth=2
 
 set tabstop=2
 
-set colorcolumn=80
+set colorcolumn=100
 
 set nowrap
 
@@ -220,15 +229,14 @@ command W w !sudo tee % > /dev/null
 autocmd FileType html
             \ setlocal formatprg=tidy\ -indent\ -quiet\ --show-errors\ 0\ --tidy-mark\ no\ --show-body-only\ auto
 
-
 " vim events
 " autocmd  EventName  filename_pattern   :command
 " to get a list of all events do: 
 " help autocmd-events 
-autocmd FileType python :set tabstop=4
-autocmd FileType python :set shiftwidth=4
-autocmd FileType perl   :set tabstop=2
-autocmd FileType perl   :set shiftwidth=2
+"autocmd FileType python :set tabstop=4
+"autocmd FileType python :set shiftwidth=4
+"autocmd FileType perl   :set tabstop=2
+"autocmd FileType perl   :set shiftwidth=2
 
 " shows all vim colors with names
 " /opt/local/share/nvim/runtime/syntax/colortest.vim

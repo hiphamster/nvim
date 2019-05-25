@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/Users/ayelluas/dev/replicant-api'
 let g:netrw_dirhist_2='/Users/ayelluas/dev/replicant-api/api'
 let g:netrw_dirhist_3='/Users/ayelluas/dev/replicant-api/api/resources'
 let g:netrw_dirhist_4='/Users/ayelluas/dev/replicant-api'
+let g:netrw_dirhist_5='/private/tmp'
