@@ -4,6 +4,8 @@
 " curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "------------------------------------------------------------------------------
+colorscheme peachpuff
+
 set nocompatible              " be iMproved, required
 
 call plug#begin('~/.vim/bundle')
@@ -157,7 +159,7 @@ let g:jedi#auto_initialization = 1
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
+let g:jedi#popup_on_dot = 1
 let g:jedi#completions_command = ""
 let g:jedi#show_call_signatures = "1"
 
@@ -185,6 +187,8 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " sort imports with isort 
 Plug 'fisadev/vim-isort'
 let g:vim_isort_map = '<C-i>'
+
+Plug 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call plug#end()           
@@ -268,13 +272,7 @@ command W w !sudo tee % > /dev/null
 :set nowritebackup 
 :endif
 
-autocmd FileType html \
-            \ setlocal formatprg=tidy
-						\ -indent
-						\ -quiet
-						\ --show-errors 0
-						\ --tidy-mark no
-						\ --show-body-only auto
+"autocmd FileType html setlocal formatprg=tidy -indent -quiet --show-errors 0 --tidy-mark no --show-body-only auto
 
 " vim events
 " autocmd  EventName  filename_pattern   :command
