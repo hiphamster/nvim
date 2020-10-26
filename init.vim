@@ -1,14 +1,11 @@
 " echo '(>^.^<)'
 "------------------------------------------------------------------------------
 " Plug START
-" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"------------------------------------------------------------------------------
+
 colorscheme peachpuff
 
 set nocompatible              " be iMproved, required
-
-call plug#begin('~/.vim/bundle')
+call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'edkolev/tmuxline.vim'
 let g:airline#extensions#tmuxline#enabled = 0
