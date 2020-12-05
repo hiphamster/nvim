@@ -1,7 +1,7 @@
 " echo '(>^.^<)'
 "------------------------------------------------------------------------------
 " Plug START
-" curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+" curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
 "   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "------------------------------------------------------------------------------
 colorscheme peachpuff
@@ -89,6 +89,9 @@ Plug 'Lokaltog/vim-easymotion'
 " Helps write HTML faster
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 
+" syntax file for scss (sassy css)
+Plug 'cakebaker/scss-syntax.vim'
+
 " vim-scripts repos
 " Plug 'FuzzyFinder'
 
@@ -117,15 +120,23 @@ Plug 'mileszs/ack.vim'
 Plug 'godlygeek/tabular'
 
 "Markup/markdown
-Plug 'vim-pandoc/vim-pandoc'
+"""Plug 'gabrielelana/vim-markdown'
+"""Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax' 
 let g:pandoc#syntax#conceal#urls = 1
+augroup pandoc_syntax
+  au! BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
+augroup END
+
 
 Plug 'elzr/vim-json'
 
 " Folding indented code blocks
 Plug 'tweekmonster/braceless.vim'
 autocmd FileType python BracelessEnable +indent
+
+" Kite for python
+" Plug 'kiteco/vim-plugin'
 
 "ncm2 autocomplete
 "------------------------------------------------------------------------------
@@ -134,9 +145,12 @@ Plug 'roxma/nvim-yarp'
 " Python completion
 Plug 'ncm2/ncm2-jedi'
 " Words in buffer completion
-" Plugin 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-bufword'
 " Filepath completion
-" Plugin 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-path'
+
+" javascript 
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 
 " enable ncm2 for all buffers
 autocmd BufEnter * call ncm2#enable_for_buffer()
@@ -168,7 +182,7 @@ let g:ale_html_tidy_executable = '/opt/local/bin/tidy'
 
 " Python 
 "------------------------------------------------------------------------------
-let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
+" let g:python_host_prog = $HOME.'/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = $HOME.'/.pyenv/versions/neovim3/bin/python'
 " ale lint - https://github.com/w0rp/ale
 Plug 'w0rp/ale'
@@ -190,11 +204,20 @@ let g:vim_isort_map = '<C-i>'
 
 Plug 'leafgarland/typescript-vim'
 
+Plug 'chrisbra/csv.vim'
+
 " All of your Plugins must be added before the following line
 call plug#end()           
 "------------------------------------------------------------------------------
 " Plug END
 "------------------------------------------------------------------------------
+
+"-- FOLDING --
+set foldmethod=syntax "syntax highlighting items specify folds
+set foldcolumn=1 "defines 1 col at window left, to indicate folding
+let javaScript_fold=1 "activate folding by JS syntax
+let perl_fold=1
+set foldlevelstart=99 "start file with all folds opened
 
 " enable project-specific .vimrc files
 set exrc
@@ -287,5 +310,5 @@ command W w !sudo tee % > /dev/null
 " /opt/local/share/nvim/runtime/syntax/colortest.vim
 
 hi Search cterm=NONE ctermfg=black ctermbg=lightgreen
-let perl_fold=1
+
 set secure
