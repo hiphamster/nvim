@@ -1,0 +1,11 @@
+{
+  "python.analysis.logLevel":"Trace",
+  // "python.pythonPath": "/Users/alex/.pyenv/shims/python",
+  "python.venvPath": "/Users/alex/.pyenv/versions/panda/",
+
+
+
+  "python.linting.enabled": true
+  // "python.linting.pylintEnabled": true,
+  // "python.linting.pylintArgs": ["--load-plugins", "pylint_flask_sqlalchemy"]
+}
