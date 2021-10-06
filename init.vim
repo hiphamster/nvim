@@ -114,6 +114,10 @@ Plug 'benmills/vimux'
 Plug 'ivalkeen/vim-simpledb'
 let g:simpledb_show_timing = 0
 
+"SQL - sqlformat (https://sqlformat.org)
+"i.e. 1,5!sqlformat -r -
+"$ sqlformat --help
+
 " automatically close parentheses and brackets
 Plug 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
