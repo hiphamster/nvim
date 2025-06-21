@@ -1,0 +1,28 @@
+{
+
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.parameterTypes": false,
+
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportOptionalIterable": false,
+    "reportArgumentType": false,
+    "reportAssignmentType": false,
+    "reportCallIssue": false,
+    "reportAttributeAccessIssue": false,
+    "reportOptionalMemberAccess": false
+  },
+
+  "python.analysis.logLevel":"Trace",
+  "python.venvPath":"${env:PYENV_ROOT}/versions",
+  "python.pythonPath": "${env:PYENV_ROOT}/versions/panda/bin/python",
+
+  //XXX this may screwup other projects, need to investigate further 
+  // "python.analysis.extraPaths": ["/Users/alex/src/sandbox/fpi"],
+
+  "python.linting.enabled":true
+  // "python.linting.pylintEnabled": true,
+  // "python.linting.pylintArgs": ["--load-plugins", "pylint_flask_sqlalchemy"]
+}
+
+// :CocCommand workspace.showOutput Pyright
+
